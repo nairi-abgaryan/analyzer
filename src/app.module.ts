@@ -1,5 +1,3 @@
-import './polyfill';
-
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 

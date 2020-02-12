@@ -41,7 +41,7 @@ export class AuthService {
             throw new UserNotFoundException();
         }
 
-        return Mapper.map(UserResponse, user);
+        return Mapper.map(user, UserResponse);
     }
 
     static setAuthUser(user: UserEntity) {

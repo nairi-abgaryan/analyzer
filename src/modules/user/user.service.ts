@@ -45,7 +45,7 @@ export class UserService {
 
         await this.userRepository.save(user);
 
-        return Mapper.map(UserResponse, user);
+        return Mapper.map(user, UserResponse);
     }
 
     async getUsers(pageOptionsDto: UsersPageOptionsDto): Promise<UsersPageDto> {
@@ -59,6 +59,7 @@ export class UserService {
             pageOptionsDto,
             itemCount: usersCount,
         });
-        return new UsersPageDto(users.toDtos(UserResponse), pageMetaDto);
+
+        return new UsersPageDto(Mapper.map(users, UserResponse), pageMetaDto);
     }
 }
