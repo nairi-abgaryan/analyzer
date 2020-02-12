@@ -1,6 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import { InfoRepository } from './infoRepository';
+import { Info } from './info.entity';
+
 @Injectable()
 export class InfoService {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    async getByGID(): Promise<void> {}
+    constructor(public readonly infoRepository: InfoRepository) {}
+
+    async findInfoByPID(PID: string): Promise<Info[]> {
+        return this.infoRepository.find({where: { PID }})
+    }
 }

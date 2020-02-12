@@ -3,6 +3,7 @@ import { ApiOkResponse, ApiUseTags } from '@nestjs/swagger';
 
 import { AnalyzeService } from './analyze.service';
 import { DataRequest } from './models/DataRequest';
+import { DataResponse } from './models/DataResponse';
 
 @Controller('analyze')
 @ApiUseTags('Data Analyze')
@@ -15,7 +16,8 @@ export class AnalyzeController {
         type: {},
         description: 'User info with access token',
     })
-    async analyze(@Body() dataRequest: DataRequest): Promise<void> {
-        await this.analyzeService.analyze(dataRequest);
+    async analyze(@Body() dataRequest: DataRequest): Promise<DataResponse[] | DataResponse> {
+        // eslint-disable-next-line no-return-await
+        return await this.analyzeService.parseData(dataRequest);
     }
 }

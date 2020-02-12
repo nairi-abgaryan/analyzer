@@ -9,5 +9,6 @@ import { InfoService } from './info.service';
     imports: [TypeOrmModule.forFeature([Info])],
     controllers: [InfoController],
     providers: [InfoService],
+    exports: [InfoService]
 })
 export class InfoModule {}
