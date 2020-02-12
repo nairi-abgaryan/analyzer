@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne } from 'typeorm';
+import { Column, Entity, OneToMany } from 'typeorm';
 
 import { AbstractEntity } from '../../common/abstract.entity';
 import { DataEntity } from '../pid-analyze/data.entity';
@@ -8,7 +8,7 @@ export class Info extends AbstractEntity {
     @Column({ nullable: false })
     pid: string;
 
-    @ManyToOne(
+    @OneToMany(
         type => DataEntity,
         data => data.info,
     )
