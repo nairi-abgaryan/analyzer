@@ -32,7 +32,9 @@ module.exports = {
         'no-extend-native': 'off',
         'no-param-reassign': 'off',
         'no-dupe-class-members': 'off',
-        'new-cap': 'off'
+        'new-cap': 'off',
+        '@typescript-eslint/camelcase': 'off',
+        'no-return-await': 'off'
     },
     ignorePatterns: ['src/migrations'],
 };
