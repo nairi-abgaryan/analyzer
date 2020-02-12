@@ -71,4 +71,3 @@ docker-compose.yml
 
 # sequelize config files
 config/
-models/
