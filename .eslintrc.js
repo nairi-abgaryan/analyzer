@@ -34,7 +34,8 @@ module.exports = {
         'no-dupe-class-members': 'off',
         'new-cap': 'off',
         '@typescript-eslint/camelcase': 'off',
-        'no-return-await': 'off'
+        'no-return-await': 'off',
+        'consistent-return': 'off'
     },
     ignorePatterns: ['src/migrations'],
 };

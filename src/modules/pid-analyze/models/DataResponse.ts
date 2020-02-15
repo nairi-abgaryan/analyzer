@@ -11,8 +11,12 @@ export class DataResponse extends AbstractDto {
     @ApiModelPropertyOptional()
     info: Info;
 
+    @ApiModelPropertyOptional()
+    value: number;
+
     constructor(dataEntity: DataEntity) {
         super(dataEntity);
         this.pid = dataEntity.pid;
+        this.value = dataEntity.value;
     }
 }

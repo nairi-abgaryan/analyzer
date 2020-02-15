@@ -1,6 +1,5 @@
 import * as dotenv from 'dotenv';
 import { SnakeNamingStrategy } from './src/snake-naming.strategy';
-import './src/polyfill';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 if (!(<any>module).hot /* for webpack HMR */) {

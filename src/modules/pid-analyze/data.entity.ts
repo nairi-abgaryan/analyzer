@@ -9,7 +9,7 @@ export class DataEntity extends AbstractEntity {
     pid: string;
 
     @Column({ nullable: false })
-    value: string;
+    value: number;
 
     @ManyToOne(
         type => Info,
