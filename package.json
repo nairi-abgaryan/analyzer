@@ -7,7 +7,7 @@
         "build": "rimraf dist && tsc -p tsconfig.build.json",
         "format": "prettier --write \"**/*.{ts,js,json,md,yml}\" --ignore-path .gitignore --write",
         "start": "node dist/src/main",
-        "start:hmr": "node dist/src/main",
+        "start:hmr": "NODE_ENV=development node dist/src/main",
         "start:dev": "ts-node -r tsconfig-paths/register src/main.ts",
         "migration:generate": "ts-node node_modules/typeorm/cli.js migration:generate -f ormconfig -d src/migrations -n",
         "migration:revert": "ts-node node_modules/typeorm/cli.js migration:revert -f ormconfig",
