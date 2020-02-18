@@ -62,6 +62,9 @@ export class ConfigService {
             username: this.get('POSTGRES_USERNAME'),
             password: this.get('POSTGRES_PASSWORD'),
             database: this.get('POSTGRES_DATABASE'),
+            extra: {
+                ssl: true
+            },
             migrationsRun: true,
             logging: this.nodeEnv === 'development',
             namingStrategy: new SnakeNamingStrategy(),

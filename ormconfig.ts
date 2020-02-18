@@ -7,7 +7,7 @@ if (!(<any>module).hot /* for webpack HMR */) {
 }
 
 dotenv.config({
-    path: `.${process.env.NODE_ENV}.env`,
+    path: `.env`,
 });
 
 Object.keys(process.env).map((envName) => {
@@ -22,6 +22,7 @@ module.exports = {
     username: process.env.POSTGRES_USERNAME,
     password: process.env.POSTGRES_PASSWORD,
     database: process.env.POSTGRES_DATABASE,
+    sslmode: 'require',
     namingStrategy: new SnakeNamingStrategy(),
     entities: [
         'src/modules/**/*.entity{.ts,.js}',
