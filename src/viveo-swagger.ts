@@ -6,6 +6,7 @@ export function setupSwagger(app: INestApplication) {
         .setTitle('API')
         .setVersion('0.0.1')
         .addBearerAuth()
+        .setSchemes('http', 'https')
         .build();
 
     const document = SwaggerModule.createDocument(app, options);
