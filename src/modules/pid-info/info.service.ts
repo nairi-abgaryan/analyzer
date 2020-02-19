@@ -13,7 +13,7 @@ export class InfoService {
     ) {}
 
     async findInfoByPID(PID: string): Promise<Info[]> {
-        return this.infoRepository.find({where: { PID }})
+        return this.infoRepository.find({where: { pid: PID }})
     }
 
     async findAll(): Promise<Info[]> {

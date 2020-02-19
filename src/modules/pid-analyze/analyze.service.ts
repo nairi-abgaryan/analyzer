@@ -82,8 +82,6 @@ export class AnalyzeService {
     }
 
     async parseLine(dataRequest: DataRequest): Promise<boolean> {
-        // eslint-disable-next-line no-undef
-        const t0 = performance.now();
         const splitLine = dataRequest.data.split(" ");
         const PID = splitLine[0];
         const lineArray = splitLine.slice(2);
@@ -100,9 +98,7 @@ export class AnalyzeService {
         }));
 
         await this.dataRepository.save(this.parsedPIDData);
-        // eslint-disable-next-line no-undef
-        const t1 = performance.now();
-        console.log(`Call to doSomething took ${  t1 - t0  } milliseconds.`);
+        this.parsedPIDData = [];
 
         return true;
     }
