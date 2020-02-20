@@ -16,7 +16,7 @@ import { Roles } from '../../decorators/roles.decorator';
 import { AuthGuard } from '../../guards/auth.guard';
 import { RolesGuard } from '../../guards/roles.guard';
 import { AuthUserInterceptor } from '../../interceptors/auth-user-interceptor.service';
-import { UsersPageDto } from './models/UsersPageDto';
+import { UsersPageResponse } from './models/UsersPageResponse';
 import { UsersPageOptionsDto } from './models/UsersPageOptionsDto';
 import { UserEntity } from './user.entity';
 import { UserService } from './user.service';
@@ -42,12 +42,12 @@ export class UserController {
     @ApiResponse({
         status: HttpStatus.OK,
         description: 'Get users list',
-        type: UsersPageDto,
+        type: UsersPageResponse,
     })
     getUsers(
         @Query(new ValidationPipe({ transform: true }))
         pageOptionsDto: UsersPageOptionsDto,
-    ): Promise<UsersPageDto> {
+    ): Promise<UsersPageResponse> {
         return this.userService.getUsers(pageOptionsDto);
     }
 }

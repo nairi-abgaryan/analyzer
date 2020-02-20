@@ -13,7 +13,7 @@ export class Info extends AbstractEntity {
         type => DataEntity,
         data => data.info,
     )
-    data: string;
+    data?: string;
 
     @Column({ nullable: true })
     description: string;
@@ -22,7 +22,7 @@ export class Info extends AbstractEntity {
     concat: string;
 
     @Column({
-        type: "enum",
+        type: 'enum',
         enum: OperationTypes,
         default: OperationTypes.NoOperation,
         nullable: true

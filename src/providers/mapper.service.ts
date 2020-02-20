@@ -57,7 +57,7 @@ export class Mapper {
             return Mapper.toDto(model, entity, options)
         }
         return <T[]>_(entity)
-            .map(item => Mapper.toDto(model, item,options))
+            .map(item => Mapper.toDto(model, item, options))
             .compact()
             .value();
     }

@@ -5,7 +5,7 @@ import { PageMetaDto } from '../../common/dto/PageMetaDto';
 import { Mapper } from '../../providers/mapper.service';
 import { RegisterRequest } from '../auth/models/RegisterRequest';
 import { UserResponse } from './models/UserResponse';
-import { UsersPageDto } from './models/UsersPageDto';
+import { UsersPageResponse } from './models/UsersPageResponse';
 import { UsersPageOptionsDto } from './models/UsersPageOptionsDto';
 import { UserEntity } from './user.entity';
 import { UserRepository } from './user.repository';
@@ -48,7 +48,7 @@ export class UserService {
         return Mapper.map(user, UserResponse);
     }
 
-    async getUsers(pageOptionsDto: UsersPageOptionsDto): Promise<UsersPageDto> {
+    async getUsers(pageOptionsDto: UsersPageOptionsDto): Promise<UsersPageResponse> {
         const queryBuilder = this.userRepository.createQueryBuilder('user');
         const [users, usersCount] = await queryBuilder
             .skip(pageOptionsDto.skip)
@@ -60,6 +60,6 @@ export class UserService {
             itemCount: usersCount,
         });
 
-        return new UsersPageDto(Mapper.map(users, UserResponse), pageMetaDto);
+        return new UsersPageResponse(Mapper.map(users, UserResponse), pageMetaDto);
     }
 }

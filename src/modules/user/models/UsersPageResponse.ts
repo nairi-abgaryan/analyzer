@@ -3,7 +3,7 @@ import { UserResponse } from './UserResponse';
 import { PageMetaDto } from '../../../common/dto/PageMetaDto';
 import { AbstractDto } from '../../../common/dto/AbstractDto';
 
-export class UsersPageDto {
+export class UsersPageResponse {
     @ApiModelProperty({
         type: UserResponse,
         isArray: true,
